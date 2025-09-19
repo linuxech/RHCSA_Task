@@ -1,0 +1,32 @@
+#Checking the permissions for file
+
+ls -l /etc/issue  // You can also use the ll alias to list the files in any directroy you are authorized to.
+
+##For Example##
+drwxr-xr-x. 3 user1 user1 26 Aug 20 08:48 Desktop
+
+d = Directory
+r/w/x = Owner/root user have all permissions
+r/-/x = Member of the group have read and Execute permissions only. 
+r/-/x = Others users have the read and executre permissions only
+	// Execute permission let you list the content of the folder
+
+3 = 
+user1 = Owner of the file
+user1 = Group owner of the file //2nd user1
+
+Timestamp
+File/Folder Name
+---------------------------------------------------------------
+#Make a directory with /data/student, add a group student.
+#Make the member of student group to access the student folder. 
+
+mkdir /data/student	//make directories
+ls -l /data/student	//list their permission details with owner and group owner info
+
+chgrp student /data/student	//change the group owner to student
+ls -ld /data/student
+
+chmod g+w /data/student		//change the permisson of write for student group.
+ls -ld /data/student
+

@@ -21,6 +21,15 @@ chage -E $(date -d +90days +%Y-%m-%d) First_Last   // Change the password expira
 chage -M 30 First_Last   /change the Maximum days before password change to 30 days
 
 /etc/shadow  -- Files that contains password policy and the encrpted password. 
+##For example##
+tony:$6$rounds=100000$st/MWzY9EB.Q80oS$t8uEupnjdSlRKOwPSpHdmCDLnFjdVd43sUylBnipekCxKUwQHnWOgpHtT/q6FD2W2fdup/WalJ/EkPIgq4anV/:20350:0:30:7::20440:
+
+20350 = The days from last passwd change from beginning. Beginning from 1970. 
+0 = The minimum no. of days since last passwd change, before the user change the password.
+30 = The maximum no. of days without password change. 
+7 = The no. of days ahead to warn the user. 
+20440 = The when the accunt exipires from 1970.
+######Example##########
 
 echo SecretPassword | passwd --stdin First_Last   // Using the SecretPassword as Pipline to be entered when asked for password automatically. 
 
@@ -38,4 +47,6 @@ usermod -L First_Last
 
 userdel First_Last  // Deleting the user shell and services, except their home directory.
 
+userdel -f First_Last  // use the force flag to remove the user entirely, except their home directory. 
 
+--------------------End-----------------------------------------
