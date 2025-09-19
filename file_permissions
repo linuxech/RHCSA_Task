@@ -30,3 +30,36 @@ ls -ld /data/student
 chmod g+w /data/student		//change the permisson of write for student group.
 ls -ld /data/student
 
+----------------------------------------------------------------
+#Make the directory more private and removing the user who are not in student group
+
+chmod o-rx /data/student/		//update the permission to owner only and removing the other permission. 
+
+touch test.txt			//create a test file in student folder. 
+chgrp student test.txt		//Change the group ownership to student 
+ls -l text.txt 			//Check the owner and group owner of file.
+
+chmod 660 test.txt		//Octal method for assigning permission for file.
+
+----------------------------------------------------------------
+#Making an exclusive owner of a certain file/directory. 
+
+chown First_Last  /data/student/test.txt		//Change the ownership of the file test.txt
+
+vi test.sh		//Create a test file after logging with First_Last
+chmod u+x test.sh	//Update the permission so only the owner can execute the file. 
+
+---------------------------------------------------------------
+#Try adding another user and add that to student group and access the test.sh
+
+useradd jill		//Add a user jill
+passwd jill		//update the password
+
+usermod -aG student jill	//Add the user to student group.
+
+su -jill 	//login with jill
+--Try to run the test.sh and view the content in thefile------
+
+--------------------------------------------------------------
+
+
