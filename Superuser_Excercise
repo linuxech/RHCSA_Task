@@ -1,0 +1,26 @@
+This document contains the step by step approach of testing for a user. 
+
+#Outcome
+• Use the sudo command to switch to the root user and access the interactive shell as
+root without knowing the password of the superuser.
+• Explain how the su and su - commands affect the shell environment through running or
+not running the login scripts.
+• Use the sudo command to run other commands as the root user.
+
+a) SSH into your machine and make sure you are logged in with regular user.
+b) Run id in terminal to see the output of the current user. 
+c) Run pwd to check the current directory. 
+d) Check the HOME variable by running echo $HOME
+e) Check the PATH variable by running echo $PATH
+
+-- Now switch to root in non-login shell.
+
+@ use sudo su command. 
+
+Follow the same commands and compare the output.
+- Now exit from the root non-login. 
+
+-- Now switch to root user as login shell. 
+Check the same and compare the output to observe the difference. 
+
+
