@@ -64,10 +64,16 @@ chage tom/jane/jhon
 ### 🔹 4.1
 Lock the `john` user immediately
 
+usermod -l john
+
 ### 🔹 4.2
 Lock the `jane` user on **1st July 2026**
 
+usermod --expiredate YYYY-MM-DD jane
+
 ### 🔹 4.3
 The user `tom` is under investigation, thus change the user's shell to `nologin`
+
+usermod -s /sbin/nologin or /bin/sbin/nologin tom
 
 ---
